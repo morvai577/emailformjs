@@ -51,6 +51,17 @@ function validateLength(field) {
     }
 }
 
+// Both will return errors, then check if there are any errors
+errors = document.querySelectorAll('.error');
+
+// Check inputs are non-empty
+if(email.value !== '' && subject.value !== '' && message.value !== '') {
+    if(errors.length === 0) {
+        // the send button should be enabled
+        sendBtn.disabled = false;
+    }
+}
+
 // Validate email (checks for @ in the value)
 function validateEmail(field) {
     let emailText = field.value;
